@@ -20,6 +20,25 @@
   <meta name="description" content="{MetaDescription}" />
   {/block:Description}
 
+  <!--FONTS-->
+  <link href="https://fonts.googleapis.com/css?family={text:Font}:300,300i,400,400i,500,500i,700,700i|{text:Font Two}:300,300i,400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+
+   <!--FONT AWESOME-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+  <script>
+    document.body.classList.add('js-loading');
+
+    window.addEventListener("load", showPage, false);
+
+    function showPage() {
+      setTimeout(function(){
+          document.body.classList.remove('js-loading');
+      }, 2000);
+    }
+  </script>
+
+
   {block:Hidden}
   <meta name="theme-color" content="">
 
@@ -198,14 +217,9 @@
 
   {/block:Hidden}
 
-   <!--FONTS-->
-  <link href="https://fonts.googleapis.com/css?family={text:Font}:300,300i,400,400i,500,500i,700,700i|{text:Font Two}:300,300i,400,400i,700,700i&amp;subset=cyrillic,greek,latin-ext" rel="stylesheet">
 
   <!--jQUERY-->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-  <!--FONT AWESOME-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
   <!--PXU PHOTOSETS-->
   <script async type="text/javascript" src="https://static.tumblr.com/hohmoxg/7D6q63tqk/pxuphotoset.min.js"></script>
@@ -278,6 +292,12 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   font-weight: var(--fontWeight);
+}
+
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important;
 }
 
 ::selection {
@@ -601,9 +621,6 @@ input#sidebar_button:checked ~ #sidebar_controls::before {
 #content_wrapper {
   position: relative;
   max-width: 100%;
-  -webkit-animation-duration: 1.2s;
-  animation-name: fadeIn;
-  animation-duration: 1.2s;
   margin-right: var(--sidebarWidth);
   margin-left: var(--barWidth);
 }
@@ -634,6 +651,9 @@ aside {
   width: var(--sidebarWidth);
   background: var(--sidebarBackground);
   color: var(--sidebarText);
+  -webkit-animation: slideIn 1.8s forwards;
+  -moz-animation: slideIn 1.8s forwards;
+  animation: slideIn 1.8s forwards;
 }
 
 aside a {
@@ -786,6 +806,9 @@ aside .side_menu a {
   padding: 0 25px;
   max-width: var(--postWidth);
   flex-wrap: wrap;
+  -webkit-animation: slideUp 1.2s forwards;
+  -moz-animation: slideUp 1.2s forwards;
+  animation: slideUp 1.2s forwards;
 }
 
 .post_header {
@@ -1885,6 +1908,20 @@ p.npf_chat:nth-of-type(2n + 1) {
   color: var(--navigationText);
 }
 
+.animate-content {
+  -webkit-animation-duration: 1.5s;
+  animation-name: fadeIn;
+  animation-duration: 1.5s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-content,
+  aside,
+  #sidebar_controls {
+    animation: none;
+  }
+}
+
 /* TRANSITIONS */
 /*ANIMATION KEYFRAMES*/
 @-webkit-keyframes fadeIn  {
@@ -1894,6 +1931,46 @@ p.npf_chat:nth-of-type(2n + 1) {
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+/*slide left*/
+@-webkit-keyframes slideIn {
+  0% {transform: translateX(400px);}
+  100% {transform: translateX(0);}
+}
+@-moz-keyframes slideIn {
+  0% {transform: translateX(400px);}
+  100% {transform: translateX(0);}
+}
+@keyframes slideIn {
+  0% {transform: translateX(400px);}
+  100% {transform: translateX(0);}
+}
+
+@-webkit-keyframes slideInLeft {
+  0% {transform: translateX(-400px);}
+  100% {transform: translateX(0);}
+}
+@-moz-keyframes slideInLeft {
+  0% {transform: translateX(-400px);}
+  100% {transform: translateX(0);}
+}
+@keyframes slideInLeft {
+  0% {transform: translateX(-400px);}
+  100% {transform: translateX(0);}
+}
+
+@-webkit-keyframes slideUp {
+  0% {transform: translateY(200px);}
+  100% {transform: translateY(0);}
+}
+@-moz-keyframes slideUp {
+  0% {transform: translateY(200px);}
+  100% {transform: translateY(0);}
+}
+@keyframes slideUp {
+  0% {transform: translateY(200px);}
+  100% {transform: translateY(0);}
 }
 
 .social a,
@@ -1972,6 +2049,7 @@ aside a {
 
   aside {
     visibility: hidden;
+    animation: none;
   }
 
   .pagelinks a {
@@ -1985,6 +2063,9 @@ aside a {
   #sidebar_controls {
     border-bottom: none;
     display: flex;
+    -webkit-animation: slideInLeft 1.8s forwards;
+    -moz-animation: slideInLeft 1.8s forwards;
+    animation: slideInLeft 1.8s forwards;
   }
 
   #sidebar_controls::before {
@@ -2159,7 +2240,7 @@ aside a {
     </ul><!--updates wrap end-->
 
     <!--icon navigation-->
-    <ul id="icon_nav" class="flex flex-column">
+    <ul id="icon_nav" class="flex flex-column animate-content">
       <li><a href="/" title="{lang:Home}"><i class="fas fa-redo-alt"></i></a></li>
       {block:IfAboutPage}
       <li><a href="#info"><i class="far fa-user"></i></a></li>
@@ -2190,7 +2271,7 @@ aside a {
 
 <!--CONTAINER----------------------------------------------------------->
   <div id="container">
-    <div id="content_wrapper">
+    <div id="content_wrapper" class="animate-content">
         <div id="post_wrapper">
           <!--TAG & SEARCH RESULT INFO-->
           {block:TagPage}
