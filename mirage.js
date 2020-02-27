@@ -5,7 +5,7 @@
       if (page.is( ":hidden" ) && attr != "/") {
         page.siblings(tab).fadeOut(function() {
           $('#post_wrapper').fadeOut(function() {
-            page.fadeIn(600);
+            page.fadeIn(800);
           });
         });
       } else if (attr === "/") {
@@ -45,22 +45,7 @@ $(document).ready(function() {
 		// callback
 	});
 
-	/*MEDIA QUERIES*/
-	function mediaQs() {
-	  let breakQ = {select:post width} + 200 + 100 + 80 + {text:sidebar width} + 50;
-
-	  if ($(window).width() < breakQ) {
-       $("body").addClass("wrapped");
-      } else {
-       $("body").removeClass("wrapped");
-      }
-	}
-
-	mediaQs()
-
-    window.addEventListener('resize', function(event){
-      mediaQs();
-    });
+  $('#youtube_iframe').parent('.vid').css({'padding-top' : '52.25%'});
 
     /*FAQ ACCORDION*/
     $(".row .quest").on('click', function() {
