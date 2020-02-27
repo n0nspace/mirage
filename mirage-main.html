@@ -894,8 +894,12 @@ aside .side_menu a {
 }
 
 .caption img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
+}
+
+.caption figure:not(.tmblr-full) {
+  display: inline-block !important;
 }
 
 .caption em {
@@ -1193,6 +1197,8 @@ p.npf_chat b {
 /*neue post format*/
 .npf_row {
   margin: 0 !important;
+  padding: 20px 20px;
+  box-sizing: content-box;
 }
 
 .npf_row figure,
@@ -1854,7 +1860,8 @@ p.npf_chat:nth-of-type(2n + 1) {
 }
 
 .stronger-shadow,
-.cconnections img {
+.cconnections img,
+.caption figure {
   -webkit-box-shadow: 0px 0px 20px 0px rgba(17,17,17,0.2);
   -moz-box-shadow: 0px 0px 20px 0px rgba(17,17,17,0.2);
   box-shadow: 0px 0px 20px 0px rgba(17,17,17,0.2);
