@@ -42,7 +42,7 @@ $(document).ready(function() {
 	    'photoWrap' : '.photo-data', // photo data wrapper (includes photo, icons + exif)
 	    'photo'     : '.pxu-photo' // photo wrap (includes photo only)
 	  }, function() {
-		// callback
+		   
 	});
 
   $('#youtube_iframe').parent('.vid').css({'padding-top' : '52.25%'});
