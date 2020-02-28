@@ -26,19 +26,6 @@
    <!--FONT AWESOME-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
-  <script>
-    document.body.classList.add('js-loading');
-
-    window.addEventListener("load", showPage, false);
-
-    function showPage() {
-      setTimeout(function(){
-          document.body.classList.remove('js-loading');
-      }, 2000);
-    }
-  </script>
-
-
   {block:Hidden}
   <meta name="theme-color" content="">
 
@@ -292,12 +279,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   font-weight: var(--fontWeight);
-}
-
-.js-loading *,
-.js-loading *:before,
-.js-loading *:after {
-  animation-play-state: paused !important;
 }
 
 ::selection {
@@ -1933,7 +1914,7 @@ p.npf_chat:nth-of-type(2n + 1) {
   100% { opacity: 1; }
 }
 
-/*slide left*/
+/*slide left
 @-webkit-keyframes slideIn {
   0% {transform: translateX(400px);}
   100% {transform: translateX(0);}
@@ -1971,7 +1952,7 @@ p.npf_chat:nth-of-type(2n + 1) {
 @keyframes slideUp {
   0% {transform: translateY(200px);}
   100% {transform: translateY(0);}
-}
+}*/
 
 .social a,
 .pagelinks a,
