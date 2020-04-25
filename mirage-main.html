@@ -33,7 +33,6 @@
   <meta name="image:Sidebar Portrait" content="https://static.tumblr.com/hohmoxg/CNrq62kqs/photo-1504834636679-cd3acd047c06.jpg" />
 
   <meta name="if:Archive Link" content="0"/>
-  <meta name="if:Border Radius" content="1"/>
   <meta name="if:Shadows" content="1"/>
   <meta name="if:Wrap Post Info" content="0"/>
   <meta name="if:Updates" content="1"/>
@@ -211,6 +210,10 @@
   <!--PXU PHOTOSETS-->
   <script async type="text/javascript" src="https://static.tumblr.com/hohmoxg/7D6q63tqk/pxuphotoset.min.js"></script>
   <link rel="stylesheet" href="https://static.tumblr.com/hohmoxg/pPfq63scf/style.css">
+	
+  <script>
+      const customBorderRadius = {text:border radius} + 'px';
+  </script>
 
 <style>
 
@@ -904,6 +907,10 @@ aside .side_menu a {
 .caption img {
   max-width: 100%;
   height: auto;
+}
+	
+.caption br {
+  margin: 0;
 }
 
 .caption figure:not(.tmblr-full) {
@@ -2584,7 +2591,7 @@ aside a {
               {/block:IfCharacterTraitPos1}
               <!--skills-->
               <!--add new skills-->
-              {block:IfCharacterSkills1}
+              {block:IfCharacterSkills1Label}
               <div class="row cskills">
                 <!--COPY HERE-->
                 <div class="bar">
@@ -2592,33 +2599,33 @@ aside a {
                   <div class="track"><span style="width: {text:character skills 1 percent}%;"></span></div>
                 </div>
                 <!--COPY END-->
-                {block:IfCharacterSkills2}
+                {block:IfCharacterSkills2Label}
                 <div class="bar">
                   <div class="track_label">{text:character skills 2 label}</div>
                   <div class="track"><span style="width: {text:character skills 2 percent}%;"></span></div>
                 </div>
-                {/block:IfCharacterSkills2}
-                {block:IfCharacterSkills3}
+                {/block:IfCharacterSkills2Label}
+                {block:IfCharacterSkills3Label}
                 <div class="bar">
                   <div class="track_label">{text:character skills 3 label}</div>
                   <div class="track"><span style="width: {text:character skills 3 percent}%;"></span></div>
                 </div>
-                {/block:IfCharacterSkills3}
-                {block:IfCharacterSkills4}
+                {/block:IfCharacterSkills3Label}
+                {block:IfCharacterSkills4Label}
                 <div class="bar">
                   <div class="track_label">{text:character skills 4 label}</div>
                   <div class="track"><span style="width: {text:character skills 4 percent}%;"></span></div>
                 </div>
-                {/block:IfCharacterSkills4}
+                {/block:IfCharacterSkills4Label}
                 <!--PASTE HERE-->
               </div><!--skills-->
-              {/block:IfCharacterSkills1}
+              {/block:IfCharacterSkills1Label}
               <!--text-->
-              {block:IfCharacterText1}
+              {block:IfCharacterText2}
               <div class="row caption">
                 {text:character text 2}
               </div>
-              {/block:IfCharacterText1}
+              {/block:IfCharacterText2}
               <!--connections-->
               {block:IfConnection1IMG}
               <div class="row">
