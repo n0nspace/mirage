@@ -34,7 +34,7 @@ $(document).ready(function() {
         'ligthbox'  : true, // uses the default Tumblr lightbox, change to false to use your own
 	    'highRes'   : true, // will use high res images
 	    'rounded'   : 'all', // corners, all or false
-	    'borderRadius' : '20px',
+	    'borderRadius' : customBorderRadius,
 	    'exif'      : true, // display EXIF data if available (tooltip)
 	    'captions'  : true, // display individual captions on photos (tooltip)
 	    'gutter'    : '10px', // spacing between the images
@@ -42,7 +42,7 @@ $(document).ready(function() {
 	    'photoWrap' : '.photo-data', // photo data wrapper (includes photo, icons + exif)
 	    'photo'     : '.pxu-photo' // photo wrap (includes photo only)
 	  }, function() {
-	       
+
 	});
 
   $('#youtube_iframe').parent('.vid').css({'padding-top' : '52.25%'});
